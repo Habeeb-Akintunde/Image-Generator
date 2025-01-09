@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Bai Jamjuree", sans-serif;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 0rem;
+    background-color: #202020;
+    
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    padding: 2rem 3rem;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden; /* Prevents overflow from affecting layout */
+}
+.first{
+    width: 100%;
+    height: 30rem;
+    background-image: url("./images/Component\ 8.jpg");
+    background-size: cover; /* Similar to object-fit: cover */
+    background-position: center; /* Centers the image within the container */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem 2rem 2rem 2rem;
+    position: relative;
+}
+.details{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    row-gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    position: absolute;
+}
+.details .line{
+    width: 35%;
+    height: auto;
+    border: 1px solid #000;
+    background-color: black;
+    border-radius: 1rem;
+}
+.details .text{
+    width: fit-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: 1rem;
+}
+.details .text h2{
+    font-size: 1.2rem;
+}
+.details .text img{
+    width: 36px;
+    height: 36px;
+}
+
+.details .text-detail{
+    width: fit-content;
+    height: auto;
+    display: none;
+}
+.details .text-detail p{
+    font-size: 1rem;
+}
+.first:hover .details .text-detail{
+    display: flex;
+    animation: fadeIn 0.9s ease-in forwards;
+    z-index: 1;
+}
+.first::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background-color 0.9s ease;
+}
+
+.first:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens with semi-transparent black */
+}
+.second{
+    width: 100%;
+    height: 30rem;
+    background-image: url("./images/Component\ 10.jpg");
+    background-size: cover; /* Similar to object-fit: cover */
+    background-position: center; /* Centers the image within the container */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem 2rem 2rem 2rem;
+    position: relative;
+}
+.second:hover .details .text-detail{
+    display: flex;
+    animation: fadeIn 0.9s ease-in forwards;
+    z-index: 1;
+}
+.second::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background-color 0.9s ease;
+}
+
+.second:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens with semi-transparent black */
+}
+.third{
+    width: 100%;
+    height: 30rem;
+    background-image: url("./images/Component\ 6.jpg");
+    background-size: cover; /* Similar to object-fit: cover */
+    background-position: center; /* Centers the image within the container */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem 2rem 2rem 2rem;
+    position: relative;
+}
+.third:hover .details .text-detail{
+    display: flex;
+    animation: fadeIn 0.9s ease-in forwards;
+    z-index: 1;
+}
+.third::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background-color 0.9s ease;
+}
+
+.third:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens with semi-transparent black */
+}
+.fourth{
+    width: 100%;
+    height: 30rem;
+    background-image: url("./images/Component\ 4.jpg");
+    background-size: cover; /* Similar to object-fit: cover */
+    background-position: center; /* Centers the image within the container */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15rem 2rem 2rem 2rem;
+    position: relative;
+}
+.fourth:hover .details .text-detail{
+    display: flex;
+    animation: fadeIn 0.9s ease-in forwards;
+    z-index: 1;
+}
+.fourth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background-color 0.9s ease;
+}
+
+.fourth:hover::before {
+    background-color: rgba(0, 0, 0, 0.5); /* Darkens with semi-transparent black */
+}
