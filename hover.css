@@ -20,11 +20,11 @@ body{
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     row-gap: 0rem;
-    background-color: #202020;
+    background-color: #fff;
     
 }
 .container{
