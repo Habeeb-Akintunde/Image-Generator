@@ -207,7 +207,7 @@ body{
     padding: 2rem;
     background-color: #515151;
     border-radius: 1rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -244,11 +244,11 @@ body{
 .image{
     width: 100%;
     height: 25rem;
-    background-image: url("./images/unsplash_47bVgRJ3bFI.jpg");
+    /* background-image: url("./images/unsplash_47bVgRJ3bFI.jpg"); */
     background-size: cover; /* Similar to object-fit: cover */
     background-position: center; /* Centers the image within the container */
     background-repeat: no-repeat;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
@@ -313,11 +313,11 @@ body{
 .image{
     width: 100%;
     height: 25rem;
-    background-image: url("./images/unsplash_FC4z3l4sUYc.jpg");
+    /* background-image: url("./images/unsplash_FC4z3l4sUYc.jpg"); */
     background-size: cover; /* Similar to object-fit: cover */
     background-position: center; /* Centers the image within the container */
     background-repeat: no-repeat;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;

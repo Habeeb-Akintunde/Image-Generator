@@ -21,20 +21,44 @@ form.addEventListener("submit", (event)=>{
         
     }).then((collectedData)=>{
         console.log(collectedData);
-        container.innerHTML = ``
+        // container.innerHTML = ``
        
+        if (collectedData.results.length > 0) {
+            container.style.display = "flex";
+        }
         
         
         image.forEach((item, index)=>{
-            if (collectedData[index]){
-                item.style.backgroundImage = `url${collectedData.results[index].urls.regular}` 
-                item.style.backgroundSize = "cover";
-                item.style.backgroundPosition = "center";
-            }
-            //  console.log(`url${collectedData.results[index].urls.regular}`);
+            if (index < collectedData.results.length) { // Prevent errors if results are fewer than images
+
+                let imageUrl = `url('${collectedData.results[index].urls.regular}')`
+                    item.style.backgroundImage = imageUrl;  // ✅ Fixed this line
+                    item.style.display = "flex"
+                    item.style.backgroundSize = "cover";
+                    item.style.backgroundPosition = "center";
+            }          
              
         })
 
+
+        // download function
+        let downloadBtn = document.querySelectorAll(".download")
+        downloadBtn.forEach((item, index)=>{
+           if (item) {
+            item.onclick = function () {
+                let imageUrl = collectedData.results[index].urls.regular
+                fetch(imageUrl)
+                        .then((response) => response.blob()) // Convert image to Blob
+                        .then((blob) => {
+                            let a = document.createElement("a");
+                            a.href = URL.createObjectURL(blob); // Create an object URL from the Blob
+                            a.download = `image${index + 1}.jpg`; // File name for the download
+                            a.click(); // Trigger the download
+                        })
+                        .catch((err) => console.error("Error downloading image:", err));
+            }
+           }
+        })
 
         let text = document.createElement("h1")
         text.textContent = "Your perfect image has been uploaded below"
@@ -43,18 +67,7 @@ form.addEventListener("submit", (event)=>{
 
     })
     
-    
-    
-
     form.reset()
     
 })
 
-// function updateContainerVisibility() {
-//     const images = container.getElementsByTagName('img');
-//     if (images.length === 0) {
-//       container.style.display = 'none'; // Hide if no images
-//     } else {
-//       container.style.display = 'block'; // Show if images exist
-//     }
-//   }
