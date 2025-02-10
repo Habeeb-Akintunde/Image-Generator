@@ -72,30 +72,42 @@ form.addEventListener("submit", (event)=>{
         display.innerHTML = ``
         display.append(text)
 
+
+        // save function
+
+        save.forEach((param, index)=>{
+            param.addEventListener("click", (event)=>{
+                event.preventDefault()
+
+                param.style.display = "none"
+                saved[index].style.display = "flex"
+                
+                let imageUrl = `url('${collectedData.results[index].urls.regular}')`
+                let link = document.createElement("a")
+                link.href = imageUrl
+                param.append(link)
+
+                
+                console.log(param);
+                
+            })
+        })
+
+        saved.forEach((item, index)=>{
+            item.addEventListener("click", (event)=>{
+                event.preventDefault()
+
+                item.style.display = "none"
+                save[index].style.display = "flex"
+
+                console.log(item);
+                
+            })
+        })
+
     })
     
     form.reset()
     
 })
 
-// save function
-
-save.forEach((param, index)=>{
-    param.addEventListener("click", (event)=>{
-        event.preventDefault()
-
-        param.style.display = "none"
-        saved[index].style.display = "flex"
-
-    })
-})
-
-saved.forEach((item, index)=>{
-    item.addEventListener("click", (event)=>{
-        event.preventDefault()
-
-        item.style.display = "none"
-        save[index].style.display = "flex"
-
-    })
-})
