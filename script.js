@@ -1,10 +1,12 @@
 let form = document.getElementById("form")
 let userInput = document.getElementById("text")
-let btn = document.getElementById("btn")
 let container = document.getElementById("container")
 let display = document.getElementById("display")
 let image = document.querySelectorAll(".image")
 let imageCount = image.length
+let save = document.querySelectorAll(".save")
+let saved = document.querySelectorAll(".saved")
+
 
 
 
@@ -20,14 +22,20 @@ form.addEventListener("submit", (event)=>{
         return data.json()
         
     }).then((collectedData)=>{
-        console.log(collectedData);
-        // container.innerHTML = ``
+        // console.log(collectedData);
        
         if (collectedData.results.length > 0) {
             container.style.display = "flex";
         }
         
-        
+        // Reset all save/saved buttons before loading new images
+        save.forEach((param, index) => {
+            param.style.display = "flex";  // Make save button visible
+        });
+        saved.forEach((item, index) => {
+            item.style.display = "none";  // Hide saved button
+        });
+                
         image.forEach((item, index)=>{
             if (index < collectedData.results.length) { // Prevent errors if results are fewer than images
 
@@ -39,7 +47,6 @@ form.addEventListener("submit", (event)=>{
             }          
              
         })
-
 
         // download function
         let downloadBtn = document.querySelectorAll(".download")
@@ -71,3 +78,24 @@ form.addEventListener("submit", (event)=>{
     
 })
 
+// save function
+
+save.forEach((param, index)=>{
+    param.addEventListener("click", (event)=>{
+        event.preventDefault()
+
+        param.style.display = "none"
+        saved[index].style.display = "flex"
+
+    })
+})
+
+saved.forEach((item, index)=>{
+    item.addEventListener("click", (event)=>{
+        event.preventDefault()
+
+        item.style.display = "none"
+        save[index].style.display = "flex"
+
+    })
+})

@@ -276,10 +276,27 @@ body{
 .save{
     width: fit-content;
     height: auto;
+    display: block;
     background-color: #FFF;
     padding: 0.5rem 0.725rem;
     border-radius: 0.5rem;
     cursor: pointer;
+}
+.save i{
+    font-size: 24px;
+}
+.saved{
+    width: fit-content;
+    height: auto;
+    display: none;
+    background-color: #FFF;
+    padding: 0.5rem 0.725rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.saved i{
+    font-size: 24px;
+    color: red;
 }
 .download{
     width: fit-content;
