@@ -281,6 +281,17 @@ body{
     border-radius: 0.5rem;
     cursor: pointer;
 }
+.added{
+    width: fit-content;
+    height: auto;
+    background-color: #FFF;
+    padding: 0.5rem 0.725rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.added span{
+    color: red;
+}
 .download{
     width: fit-content;
     height: auto;
