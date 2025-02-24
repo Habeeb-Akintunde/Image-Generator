@@ -24,6 +24,7 @@ form.addEventListener("submit", (event)=>{
     }).then((collectedData)=>{
         // console.log(collectedData);
        
+        // hide the container when empty
         if (collectedData.results.length > 0) {
             container.style.display = "flex";
         }
@@ -40,7 +41,7 @@ form.addEventListener("submit", (event)=>{
             if (index < collectedData.results.length) { // Prevent errors if results are fewer than images
 
                 let imageUrl = `url('${collectedData.results[index].urls.regular}')`
-                    item.style.backgroundImage = imageUrl;  // ✅ Fixed this line
+                    item.style.backgroundImage = imageUrl;  
                     item.style.display = "flex"
                     item.style.backgroundSize = "cover";
                     item.style.backgroundPosition = "center";
@@ -85,10 +86,25 @@ form.addEventListener("submit", (event)=>{
                 let imageUrl = `url('${collectedData.results[index].urls.regular}')`
                 let link = document.createElement("a")
                 link.href = imageUrl
+                let hrefValue = link.href
                 param.append(link)
 
+                // local storage function
+                // Retrieve existing selections from localStorage or start with an empty array // assigning an empty array to the localstorage
+                let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+
+                // check for existing value to avoid duplicate
+                if(!selectedItems.includes(hrefValue)){
+                    selectedItems.push(hrefValue)
+                    
+                }
+                else {
+                    // Remove if already present (toggle effect)
+                    selectedItems = selectedItems.filter(item => item !== hrefValue);
+                }
+                // update localstorage
+                localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
                 
-                console.log(param);
                 
             })
         })
@@ -100,7 +116,19 @@ form.addEventListener("submit", (event)=>{
                 item.style.display = "none"
                 save[index].style.display = "flex"
 
-                console.log(item);
+                let imageUrl = `url('${collectedData.results[index].urls.regular}')`;
+                let link = document.createElement("a");
+                link.href = imageUrl;
+                let hrefValue = link.href;
+        
+                // Retrieve stored items
+                let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+        
+                // Remove the clicked item from storage
+                selectedItems = selectedItems.filter(item => item !== hrefValue);
+                localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+
+                // console.log(item);
                 
             })
         })
@@ -110,4 +138,3 @@ form.addEventListener("submit", (event)=>{
     form.reset()
     
 })
-

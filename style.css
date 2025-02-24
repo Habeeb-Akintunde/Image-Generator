@@ -294,6 +294,10 @@ body{
     border-radius: 0.5rem;
     cursor: pointer;
 }
+.saved i{
+    font-size: 24px;
+    color: red;
+}
 .download{
     width: fit-content;
     height: auto;
