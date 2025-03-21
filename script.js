@@ -6,8 +6,7 @@ let image = document.querySelectorAll(".image")
 let imageCount = image.length
 let save = document.querySelectorAll(".save")
 let saved = document.querySelectorAll(".saved")
-
-
+let button = document.getElementById("btn")
 
 
 let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
@@ -15,8 +14,22 @@ let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
 form.addEventListener("submit", (event)=>{
     event.preventDefault()
 
-    let userData = userInput.value          
     
+    let userData = userInput.value          
+    // form validation
+    // userInput.addEventListener("keyup", ()=>{
+    //     let userData = userInput.value
+    //     if (userData.length == 0 ) {
+    //         userInput.placeholder = "Please enter a valid search"
+    //         form.style.border = "2px solid red"
+    //         form.style.padding = "1.5rem"
+    //         button.style.display = "none"
+    //     }else{
+    //         userInput.innerText = ` `
+    //         form.style.border = "2px solid green"
+    //     }
+    // })
+
     let endpoint = `https://api.unsplash.com/search/photos?query=${userData}&per_page=${imageCount}&client_id=${api}`
     fetch(endpoint).then((data)=>{
         return data.json()
