@@ -103,6 +103,7 @@ a{
     height: auto;
     color: #FFFF5E;
     font-size: 1.25rem;
+    cursor: pointer;
 }
 .head .right img{
     width: 3rem;
