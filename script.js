@@ -6,7 +6,18 @@ let image = document.querySelectorAll(".image")
 let imageCount = image.length
 let save = document.querySelectorAll(".save")
 let saved = document.querySelectorAll(".saved")
-let button = document.getElementById("btn")
+let loginPage = document.getElementById("login-page")
+let right = document.getElementById("right")
+let show = document.getElementById("show")
+
+// display loginpage
+right.addEventListener("click", (event)=>{
+    let userEvent = event.target
+    if (userEvent.id === "show") {
+        loginPage.style.display = "flex"
+    }
+})
+
 
 
 let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
@@ -14,22 +25,8 @@ let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
 form.addEventListener("submit", (event)=>{
     event.preventDefault()
 
-    
     let userData = userInput.value          
-    // form validation
-    // userInput.addEventListener("keyup", ()=>{
-    //     let userData = userInput.value
-    //     if (userData.length == 0 ) {
-    //         userInput.placeholder = "Please enter a valid search"
-    //         form.style.border = "2px solid red"
-    //         form.style.padding = "1.5rem"
-    //         button.style.display = "none"
-    //     }else{
-    //         userInput.innerText = ` `
-    //         form.style.border = "2px solid green"
-    //     }
-    // })
-
+    
     let endpoint = `https://api.unsplash.com/search/photos?query=${userData}&per_page=${imageCount}&client_id=${api}`
     fetch(endpoint).then((data)=>{
         return data.json()
@@ -151,3 +148,40 @@ form.addEventListener("submit", (event)=>{
     form.reset()
     
 })
+
+// login sec
+let hideIcon = document.getElementById("hide-icon")
+let viewIcon = document.getElementById("review")
+let loginForm = document.getElementById("login-form")
+let username = document.getElementById("username")
+let password = document.getElementById("password")
+let passwordHide = document.getElementById("hide")
+
+
+loginForm.addEventListener("submit", (event)=>{
+    // event.preventDefault()
+
+    let usernameValue = username.value
+    let passwordValue = password.value
+
+    localStorage.setItem("usernameValue", usernameValue)
+    localStorage.setItem("passwordValue", passwordValue)
+
+
+
+    form.reset()
+})
+
+passwordHide.addEventListener("click", (event)=>{
+    let userTarget = event.target
+    
+    
+    if (userTarget.id === "hide-icon") {
+        hideIcon.style.display = "none"
+        viewIcon.style.display = "block"
+    } if(userTarget.id === "review"){
+        hideIcon.style.display = "block"
+        viewIcon.style.display = "none"
+    }
+})
+

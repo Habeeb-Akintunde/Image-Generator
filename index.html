@@ -9,7 +9,7 @@
     <title>Ai Image Genrator</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="body-container">
         <div class="head">
             <div class="left">
                 <h2>Gen AI</h2>
@@ -18,9 +18,9 @@
                 <a href="./index.html" class="home">Home</a>
                 <a href="./create.html" class="creations">My Creations</a>  
             </div>
-            <div class="right">
+            <div class="right" id="right">
                 <i class="fa-regular fa-bell"></i>
-                <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <i class="fa fa-user-circle" aria-hidden="true" id="show"></i>
             </div>
         </div>
 
@@ -382,6 +382,28 @@
             </div>
         
             <!-- <img src="./images/avatar.jpg" alt="" class="img"> -->
+            
+        </div>
+
+
+        <div class="login-page" id="login-page">
+            <form id="login-form">
+                <div class="logo">
+                    <h2>Gen AI</h2>
+                </div>
+                <h1>Welcome Back</h1>
+                <p>Please login to continue to your account</p>
+                <input type="text" name="username" id="username" placeholder="Username" required>
+                <div class="password-hide" id="hide">
+                    <input type="password" placeholder="Password" name="password" id="password" required>
+                    <span class="material-symbols-outlined" id="hide-icon">visibility_off</span>
+                    <i class="material-symbols-outlined" id="review">
+                        visibility
+                        </i>
+                </div> 
+                <button type="submit">Login</button>
+                <p>Don't have account?<a href="#">Sign up</a></p>
+            </form>
             
         </div>
     </div>
