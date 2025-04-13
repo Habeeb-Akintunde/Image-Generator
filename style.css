@@ -384,3 +384,33 @@ a{
     color: #FFF;
     animation: animate 2s ease-in-out infinite forwards;
 }
+
+/* login form */
+.login-page{
+    width: 100%;
+    height: auto;
+    display: none;
+
+}
+.login-page form{
+    width: 50%;
+    height: auto;
+    background-color: #FFF;
+    border-radius: 0.75rem;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.login-page form .logo{
+    width: fit-content;
+    height: auto;
+    
+}
