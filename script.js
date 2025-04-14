@@ -12,39 +12,6 @@ let show = document.getElementById("show")
 let bodyContainer = document.getElementById("body-container")
 
 
-// display loginpage
-// right.addEventListener("click", (event)=>{
-//     let userEvent = event.target
-//     if (userEvent.id === "show") {
-//         loginPage.style.display = "flex"
-//     }else{
-//         bodyContainer.addEventListener("click", (event)=>{
-//             eventData = event.target
-        
-//             if (eventData.id !== "body-container") {
-//                 loginPage.style.display = "none"
-//             }
-            
-//         })
-        
-//     }
-// })
-
-bodyContainer.addEventListener("click", (event)=>{
-    let userEvent = event.target 
-    if(userEvent.id === "show"){
-        loginPage.style.display = "flex"
-    }else{
-        let parent = userEvent.parentElement
-        if (parent.id !== "login-page") {
-            loginPage.style.display = "none"
-            
-        }
-    }
-
-})
-
-
 let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
 
 form.addEventListener("submit", (event)=>{
@@ -181,20 +148,36 @@ let loginForm = document.getElementById("login-form")
 let username = document.getElementById("username")
 let password = document.getElementById("password")
 let passwordHide = document.getElementById("hide")
+let loginBtn = document.getElementById("login-btn")
 
+
+bodyContainer.addEventListener("click", (event)=>{
+    let userEvent = event.target 
+    if(userEvent.id === "show"){
+        loginPage.style.display = "flex"
+    }else{
+        loginBtn.addEventListener("click", ()=>{
+            loginPage.style.display = "none"
+        })
+    }
+})
+
+let userArray = []
 
 loginForm.addEventListener("submit", (event)=>{
-    // event.preventDefault()
+    event.preventDefault()
 
-    let usernameValue = username.value
-    let passwordValue = password.value
+    let userDetails = {
+        username : username.value,
+        passwordDetails : password.value
+    }
 
-    localStorage.setItem("usernameValue", usernameValue)
-    localStorage.setItem("passwordValue", passwordValue)
+    userArray.push(userDetails)
+    // console.log(userDetails);
+    
+    localStorage.setItem("userCredentials", JSON.stringify(userArray))
 
-
-
-    form.reset()
+    loginForm.reset()
 })
 
 passwordHide.addEventListener("click", (event)=>{
