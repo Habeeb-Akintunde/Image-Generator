@@ -397,7 +397,7 @@ a{
     height: auto;
     background-color: #FFF;
     border-radius: 0.75rem;
-    padding: 5rem;
+    padding: 3rem 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -412,5 +412,69 @@ a{
 .login-page form .logo{
     width: fit-content;
     height: auto;
-    
+    text-align: center;
+    padding: 1rem;
+    border-radius: 200rem;
+    background: #a5a50a;
+}
+.login-page form .logo h2{
+    color: #FFF;
+}
+
+.login-page form .first{
+    width: 100%;
+    height: auto;
+    border: 2px solid #ADA9A9;
+    padding: 1.5rem;
+    color: #7a7878;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    font-size: 1rem;
+}
+.login-page form .first:focus-within{
+    border: 2px solid #464242;
+    border-radius: 0.5rem;
+}
+
+.login-page form .password-hide{
+    width: 100%;
+    height: auto;
+    border: 2px solid #ADA9A9;
+    padding: 1.5rem 1rem;
+    color: #7a7878;
+    background-color: #fff; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    border-radius: 0.5rem;
+}
+.login-page form .password-hide:focus-within{
+    border: 2px solid #464242;
+    border-radius: 0.5rem;
+}
+.password-hide input{
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0rem;
+}
+.password-hide i{
+    cursor: pointer;
+    display: none;
+}
+.password-hide span{
+    cursor: pointer;
+}
+.login-page button{
+    width: 100%;
+    height: auto;
+    background-color: #a5a50a;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
 }

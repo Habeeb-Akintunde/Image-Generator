@@ -9,15 +9,40 @@ let saved = document.querySelectorAll(".saved")
 let loginPage = document.getElementById("login-page")
 let right = document.getElementById("right")
 let show = document.getElementById("show")
+let bodyContainer = document.getElementById("body-container")
+
 
 // display loginpage
-right.addEventListener("click", (event)=>{
-    let userEvent = event.target
-    if (userEvent.id === "show") {
-        loginPage.style.display = "flex"
-    }
-})
+// right.addEventListener("click", (event)=>{
+//     let userEvent = event.target
+//     if (userEvent.id === "show") {
+//         loginPage.style.display = "flex"
+//     }else{
+//         bodyContainer.addEventListener("click", (event)=>{
+//             eventData = event.target
+        
+//             if (eventData.id !== "body-container") {
+//                 loginPage.style.display = "none"
+//             }
+            
+//         })
+        
+//     }
+// })
 
+bodyContainer.addEventListener("click", (event)=>{
+    let userEvent = event.target 
+    if(userEvent.id === "show"){
+        loginPage.style.display = "flex"
+    }else{
+        let parent = userEvent.parentElement
+        if (parent.id !== "login-page") {
+            loginPage.style.display = "none"
+            
+        }
+    }
+
+})
 
 
 let api = "XFMEjx3K2lO7gsypNGTzr4lIjx2xupK7znDlPKbXG34"
