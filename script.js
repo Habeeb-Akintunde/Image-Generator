@@ -149,7 +149,7 @@ let username = document.getElementById("username")
 let password = document.getElementById("password")
 let passwordHide = document.getElementById("hide")
 let loginBtn = document.getElementById("login-btn")
-
+let cancel = document.getElementById("cancel")
 
 bodyContainer.addEventListener("click", (event)=>{
     let userEvent = event.target 
@@ -158,7 +158,10 @@ bodyContainer.addEventListener("click", (event)=>{
     }else{
         loginBtn.addEventListener("click", ()=>{
             loginPage.style.display = "none"
+        }), cancel.addEventListener("click", ()=>{
+            loginPage.style.display = "none"
         })
+        
     }
 })
 

@@ -409,6 +409,16 @@ a{
     transform: translate(-50%, -50%);
     z-index: 1;
 }
+.login-page form .cancel{
+    width: 100%;
+    height: auto;
+    text-align: end;
+}
+.login-page form .cancel i{
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+}
 .login-page form .logo{
     width: fit-content;
     height: auto;
